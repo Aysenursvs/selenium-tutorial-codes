@@ -23,6 +23,6 @@ delete_button = driver.find_element(By.CLASS_NAME, "added-manually")
 delete_button.click()
 #time.sleep(5)  # Wait for the element to be added
 
-WebDriverWait(driver,10).until(
-    EC.presence_of_element_located((By.XPATH, "//div[@id='elements']/button[@class='added-manually']"))
-)
+#WebDriverWait(driver,10).until(
+#    EC.presence_of_element_located((By.XPATH, "//div[@id='elements']/button[@class='added-manually']"))
+#)
