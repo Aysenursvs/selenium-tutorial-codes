@@ -4,10 +4,10 @@ import time
 
 with Booking() as bot:
     bot.land_first_page()
-    time.sleep(10)  # Wait for 10 seconds to keep the browser open
-    print("Exiting...")
+    #time.sleep(5)  # Wait for 5 seconds to keep the browser open
+    bot.select_currency("ABD Doları")
+    time.sleep(5)  # Wait for 5 seconds to keep the browser open
 
-# Tarayıcıyı 10 saniye açık tut
 
 
 

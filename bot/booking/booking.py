@@ -1,6 +1,7 @@
 import os
 from . import constants as const
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
 chromedriver_path = os.path.join(current_dir, "..", "..", "chromedriver")
@@ -23,7 +24,10 @@ class Booking(webdriver.Chrome):
 
     def land_first_page(self):
         self.get(const.BASE_URL)
-        
+    
+    def select_currency(self, currency):
+        currency_element = self.find_element(By.CSS_SELECTOR,"button[data-testid='header-currency-picker-trigger']")
+        currency_element.click()
 
-
-
+        currency_option = self.find_element(By.CSS_SELECTOR, f"button[aria-label=' Seçilen para birimi: {currency}']")
+        currency_option.click()
