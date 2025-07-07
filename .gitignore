@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.log
+
+# Sanal ortam
+venv/
+
+# IDE ve editör
+.vscode/
+*.swp
+
+# Sistem
+.DS_Store
+
+chromedriver
+
