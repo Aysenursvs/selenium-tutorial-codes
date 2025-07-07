@@ -1,5 +1,5 @@
 import os
-from .constants import BASE_URL
+from . import constants as const
 from selenium import webdriver
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -11,8 +11,11 @@ class Booking(webdriver.Chrome):
        os.environ["PATH"] += os.pathsep + self.driver_path
        super(Booking, self).__init__()
 
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.quit()
+
     def land_first_page(self):
-        self.get(BASE_URL)
+        self.get(const.BASE_URL)
         
 
 
