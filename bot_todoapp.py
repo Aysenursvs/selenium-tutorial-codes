@@ -17,13 +17,16 @@ driver.implicitly_wait(10)  # Set an implicit wait time
 driver.get("http://localhost/")  # Replace with your local server URL
 
 text_input = driver.find_element(By.NAME, "username")  # Adjust the selector as needed
-text_input.send_keys(Keys.NUMPAD1)
+text_input.send_keys("aaa")
 
 text_input2 = driver.find_element(By.NAME, "password")  # Adjust the selector as needed
-text_input2.send_keys(Keys.NUMPAD9)
+text_input2.send_keys("aaa")
 
 login_button = driver.find_element(By.CSS_SELECTOR, "button[type='submit']")  # Adjust the selector as needed
 login_button.click()
+
+add_button = driver.find_element(By.CSS_SELECTOR, "a[href= 'add-todo-page']")  # Adjust the selector as needed
+add_button.click()
 
 
 

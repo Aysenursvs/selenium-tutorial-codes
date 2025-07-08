@@ -29,5 +29,7 @@ class Booking(webdriver.Chrome):
         currency_element = self.find_element(By.CSS_SELECTOR,"button[data-testid='header-currency-picker-trigger']")
         currency_element.click()
 
-        currency_option = self.find_element(By.CSS_SELECTOR, f"button[aria-label=' Seçilen para birimi: {currency}']")
-        currency_option.click()
+    def select_location(self, location):
+        location_element = self.find_element(By.ID, "rh")
+        location_element.clear()
+        location_element.send_keys(location)
